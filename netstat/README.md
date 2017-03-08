@@ -13,7 +13,7 @@ Plugin works only on Linux systems.
 
 ## Measurements
 
-- `udp_sockets` - UDP sockets count
+- `udp_socket` - UDP sockets count
 - `tcp_established` - Established TCP connections count
 - `tcp_syn_sent` - Connections waiting for an acknowledgment from the remote endpoint
 - `tcp_syn_recv` - Connections that have received a connection request and sent an acknowledgment
@@ -42,7 +42,7 @@ Plugin works only on Linux systems.
 ## Output example
 
 ```
-netstat udp_sockets=10
+netstat udp_socket=10
 netstat tcp_established=2
 netstat tcp_syn_sent=0
 netstat tcp_syn_recv=0
