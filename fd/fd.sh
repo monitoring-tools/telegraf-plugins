@@ -8,12 +8,6 @@ function output_metric {
     done
 }
 
-# outputs number of pids
-function output_pids_number {
-    echo "fd,system=docker proc_number=$1"
-    echo "fd,system=supervisor proc_number=$2"
-}
-
 # loads the limit of process by PID
 function load_limit {
     echo $(cat /proc/$1/limits 2> /dev/null | awk '($2=="open") && ($3=="files")  {print $4}')
@@ -120,8 +114,3 @@ then
         echo "$metric"
     done | sort -k1nr | output_metric
 fi
-
-pid_number_from_supervisorctl=$(echo $pids_from_supervisorctl | wc -w)
-pid_number_from_docker=$(echo $pids_from_docker| wc -w)
-# outputs number of pids
-output_pids_number $pid_number_from_supervisorctl $pid_number_from_docker

@@ -1,4 +1,4 @@
- IOSTAT plugin
+# IOSTAT plugin
 
 IOSTAT plugin provides metrics about I/O utilization. 
 All metrics are extracted from `iostat` command.
