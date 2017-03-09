@@ -1,7 +1,7 @@
 # FD plugin
 
 FD plugin provides metrics about file descriptors utilization for process in the docker and supervistor systems. 
-All metrics are extracted by reading `/proc/PID/limits` and `/proc/PID/fd` folders. 
+All metrics are extracted by reading `/proc/PID/limits` and `/proc/PID/fd` files. 
 
 Plugin works only on Linux systems.
 
@@ -9,7 +9,7 @@ Plugin works only on Linux systems.
 
 - `proc_open_files_total` - number of open file descriptors by process
 - `proc_open_files_limit` - limit of open file descriptors for process
-- `proc_number` - number of processes, for which  metrics proc_open_files_total and proc_open_files_limit will be collected
+- `proc_number` - number of processes, for which  metrics `proc_open_files_total` and `proc_open_files_limit` will be collected
 
 ## Dependencies
 
@@ -32,5 +32,5 @@ fd,process=nginx proc_open_files_limit=65536
 fd,process=php-fpm proc_open_files_total=65
 fd,process=php-fpm proc_open_files_limit=65536
 fd,system=docker proc_number=2
-fd,system=supervisorctl proc_number=83
+fd,system=supervisor proc_number=83
 ```

@@ -11,7 +11,7 @@ function output_metric {
 # outputs number of pids
 function output_pids_number {
     echo "fd,system=docker proc_number=$1"
-    echo "fd,system=supervisorctl proc_number=$2"
+    echo "fd,system=supervisor proc_number=$2"
 }
 
 # loads the limit of process by PID
