@@ -4,6 +4,8 @@ Here you can find some useful third-party plugins for Telegraf:
 - [IOSTAT](https://github.com/monitoring-tools/telegraf-plugins/tree/master/iostat) - I/O utilization and other information from iostat
 - [NETSTAT](https://github.com/monitoring-tools/telegraf-plugins/tree/master/netstat) - TCP connections statuses and UDP sockets count
 - [TOP](https://github.com/monitoring-tools/telegraf-plugins/tree/master/top) - resource usage by top processes
+- [FD](https://github.com/monitoring-tools/telegraf-plugins/tree/master/fd) - file descriptors usage by processes
+- [NETSPEED](https://github.com/monitoring-tools/telegraf-plugins/tree/master/netspeed) - speed of network interfaces
 
 All plugins are tested and production-ready. 
 
