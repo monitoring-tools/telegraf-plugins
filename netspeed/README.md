@@ -1,7 +1,7 @@
-# NET-SPEED plugin
+# NETSPEED plugin
 
-NET-SPEED plugin provides metrics about speed of network interfaces. 
-All metrics are extracted by reading `/sys/class/net` folder.
+NETSPEED plugin provides metrics about speed of network interfaces. 
+All metrics are extracted by reading `/sys/class/net` directory.
 
 Plugin works only on Linux systems.
 
@@ -17,7 +17,7 @@ No dependencies.
 
 ```
 [[inputs.exec]]
-  commands = ["/path/to/plugin/net-speed.sh"]
+  commands = ["/path/to/plugin/netspeed.sh"]
   timeout = "5s"
   data_format = "influx"
 ```
