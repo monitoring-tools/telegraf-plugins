@@ -1,10 +1,8 @@
 #!/bin/bash
-
 # outputs counts of UDP sockets
-ss -u -a | tail -n +2 | wc -l | awk '{print "netstat udp_socket="$1}'
-
+ss -u -a -n | awk 'END{print "netstat udp_socket=" NR-1}'
 # outputs counts of TCP connections states
-ss -t -a | tail -n +2 | awk 'BEGIN {
+ss -t -a -n | awk 'BEGIN {
     # initialization array of counts by states
     arr["ESTAB"] = 0
     arr["SYN-SENT"] = 0
@@ -14,14 +12,16 @@ ss -t -a | tail -n +2 | awk 'BEGIN {
     arr["TIME-WAIT"] = 0
     arr["UNCONN"] = 0
     arr["CLOSE-WAIT"] = 0
-    arr["LIST_ACK"] = 0
+    arr["LAST-ACK"] = 0
     arr["LISTEN"] = 0
     arr["CLOSING"] = 0
     arr["UNKNOWN"] = 0
-} {
+}
+NR > 1 {
     # increase counts of states
     arr[$1]+=1
-} END {
+}
+END {
     # output counts of states
     print "netstat tcp_established="arr["ESTAB"]
     print "netstat tcp_syn_sent="arr["SYN-SENT"]
